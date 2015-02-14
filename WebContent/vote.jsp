@@ -7,7 +7,7 @@
 	<br />
 <div class="container">
 	<div class="row clearfix">
-		<c:forEach var="item" items="${photolist}"> 
+		<c:forEach var="item" items="${photos}"> 
 			<div class="col-md-4 column">
 				<img alt="140x140" src="${item.photo}" />
 				<div class="row clearfix">
