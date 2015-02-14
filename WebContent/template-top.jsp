@@ -47,8 +47,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand topnav" href="index.jsp">Pet Lover
-					Community</a>
+				<a class="navbar-brand topnav" href="index.jsp">Pet Lover Community</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 
@@ -56,9 +55,8 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="index.jsp">About</a></li>
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="topics.jsp" id="topics">Topics <span
-							class="caret"></span></a>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" 
+					href="topics.jsp" id="topics">Topics <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="sentimental.jsp">Mood</a></li>
 							<li><a href="voting.jsp">Voting</a></li>
