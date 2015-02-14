@@ -25,6 +25,7 @@ public class CallbackServlet extends HttpServlet {
 			throw new ServletException (e);
 		}
 	//	response.sendRedirect(request.getContextPath() + "/");
-		response.sendRedirect("operationsTwi.jsp");
+	//	response.sendRedirect("operationsTwi.jsp");
+		response.sendRedirect("topics.jsp");
 	}
 }

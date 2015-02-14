@@ -58,8 +58,9 @@
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" 
 					href="topics.jsp" id="topics">Topics <span class="caret"></span></a>
 						<ul class="dropdown-menu">
+						    <li><a href="operationsTwi.jsp">Share</a></li>
 							<li><a href="statistics.jsp">Statistics</a></li>
-							<li><a href="sentimental.jsp">Mood</a></li>
+							<li><a href=http://localhost:3000>Mood</a></li>
 						</ul></li>
 
 					<li><a href="voting.jsp">Pet of 2015 Campaign</a></li>
@@ -70,3 +71,5 @@
 		</div>
 		<!-- /.container -->
 	</nav>
+	<br />
+	<br />
