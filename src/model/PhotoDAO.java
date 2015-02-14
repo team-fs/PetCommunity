@@ -48,7 +48,6 @@ public class PhotoDAO extends GenericDAO<PhotoBean> {
 	
 	public PhotoBean[] getPhotos(int userId) throws RollbackException {
 		PhotoBean[] list = match(MatchArg.equals("userId",userId));
-		Arrays.sort(list);
 		return list;
 	}
 	

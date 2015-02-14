@@ -6,17 +6,32 @@ import java.util.List;
 import org.mybeans.form.FormBean;
 
 public class UserForm extends FormBean {
-	private String userName = "";
+	private String userId;
+
+	public String getUserId() { return userId;    }
 	
-	public String getUserName()  { return userName; }
-	
-	public void setUserName(String s)  { userName = trimAndConvert(s,"<>>\"]"); }
+	public int getIdAsInt() {
+		try {
+			return Integer.parseInt(userId);
+		} catch (NumberFormatException e) {
+			// call getValidationErrors() to detect this
+			return -1;
+		}
+	}
+	public void setUserId(String id) { this.userId = id; }
 
 	public List<String> getValidationErrors() {
 		List<String> errors = new ArrayList<String>();
+		
+		if (userId == null || userId.length() == 0) {
+			errors.add("User ID is required");
+			return errors;
+		}
 
-		if (userName == null || userName.length() == 0) {
-			errors.add("User Name is required");
+		try {
+			Integer.parseInt(userId);
+		} catch (NumberFormatException e) {
+			errors.add("User ID is not an integer");
 		}
 		
 		return errors;

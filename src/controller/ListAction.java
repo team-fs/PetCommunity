@@ -18,13 +18,13 @@ import databeans.UserBean;
 import formbeans.UserForm;
 
 /*
- * Looks up the photos for a given "user".
+ * Looks up the favorite links for a given "user".
  * 
  * If successful:
  *   (1) Sets the "userList" request attribute in order to display
  *       the list of users on the navbar.
- *   (2) Sets the "photoList" request attribute in order to display
- *       the list of given user's photos for selection.
+ *   (2) Sets the "favoriteList" request attribute in order to display
+ *       the list of given user's links for selection.
  *   (3) Forwards to list.jsp.
  */
 public class ListAction extends Action {
@@ -43,29 +43,29 @@ public class ListAction extends Action {
     public String perform(HttpServletRequest request) {
         // Set up the request attributes (the errors list and the form bean so
         // we can just return to the jsp with the form if the request isn't correct)
+
         List<String> errors = new ArrayList<String>();
         request.setAttribute("errors",errors);
-        
+
 		try {
             // Set up user list for nav bar
 			request.setAttribute("userList",userDAO.getUsers());
 
 			UserForm form = formBeanFactory.create(request);
-	    	
-			String userName = form.getUserName();
-			if (userName == null || userName.length() == 0) {
-				errors.add("User must be specified");
-				return "error.jsp";
-			}
-	
-	        // Set up photo list
-        	User user = userDAO.read(userName);
+
+			int userId = form.getIdAsInt();
+
+	        // Set up favorite list
+        	UserBean user = userDAO.read(userId);
         	if (user == null) {
-    			errors.add("Invalid User: "+userName);
+    			errors.add("Invalid User: "+userId);
     			return "error.jsp";
+    		} else {
+    			request.setAttribute("firstName", user.getFirstName());
+    			request.setAttribute("lastName", user.getLastName());    			
     		}
 
-        	Photo[] photoList = photoDAO.getPhotos(user.getUserName());
+        	PhotoBean[] photoList = photoDAO.getPhotos(userId);
 	        request.setAttribute("photoList",photoList);
 	        return "list.jsp";
         } catch (RollbackException e) {

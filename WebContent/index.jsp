@@ -9,15 +9,16 @@
                         <h1>Hi, Pet Lovers!</h1>
                         <h3>Log In to Explore More</h3>
                         <hr class="intro-divider">
+                        
                         <ul class="list-inline intro-social-buttons">
                             <li>
                                 <a href="signin" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                             </li>
                             <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-yelp fa-fw"></i> <span class="network-name">Yelp</span></a>
                             </li>
                             <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
                             </li>
                         </ul>
                     </div>
