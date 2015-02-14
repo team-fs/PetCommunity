@@ -1,6 +1,14 @@
 <jsp:include page="template-top.jsp"/>
-
-  <link rel="stylesheet" href="../../assets/css/keen-dashboards.css">
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+  <link rel="stylesheet" href="css/keen-dashboards.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
   <div class="container-fluid">
     <div class="row">
@@ -82,45 +90,20 @@
 
     </div>
 
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="chart-wrapper">
-          <img data-src="holder.js/100%x150/white">
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="chart-wrapper">
-          <img data-src="holder.js/100%x150/white">
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="chart-wrapper">
-          <img data-src="holder.js/100%x150/white">
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="chart-wrapper">
-          <img data-src="holder.js/100%x150/white">
-        </div>
-      </div>
-    </div>
-
     <hr>
-
-    <p class="small text-muted">Built with &#9829; by <a href="https://keen.io">Keen IO</a></p>
 
   </div>
 
-  <script src="../../assets/lib/jquery/dist/jquery.min.js"></script>
-  <script src="../../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
-  <script src="../../assets/lib/holderjs/holder.js"></script>
+  <script src="js/holder.js"></script>
   <script>
     Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
   </script>
 
-  <script src="../../assets/lib/keen-js/dist/keen.min.js"></script>
-  <script src="../../assets/js/meta.js"></script>
-  <script src="keen.dashboard.js"></script>
+  <script src="js/keen.min.js"></script>
+  <script src="js/meta.js"></script>
+  <script src="js/keen.dashboard.js"></script>
 
 <jsp:include page="template-bottom.jsp"/>
