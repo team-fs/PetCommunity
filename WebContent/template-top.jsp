@@ -65,6 +65,7 @@
 
 					<li><a href="voting.jsp">Pet of 2015 Campaign</a></li>
 					<li><a href="businessSearch.jsp">Pet-Friendly Apt</a></li>
+					<li><a href="logout">Logout</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
