@@ -62,7 +62,7 @@
 							<li><a href=http://localhost:3000>Mood</a></li>
 						</ul></li>
 
-					<li><a href="voting.jsp">Pet of The Week Campaign</a></li>
+					<li><a href="vote.jsp">Pet of The Week Campaign</a></li>
 					<li><a href="businessSearch.jsp">Need Pet Services?</a></li>
 					<li><a href="logout">Login/Logout</a></li>
 				</ul>
