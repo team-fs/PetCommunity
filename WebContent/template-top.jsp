@@ -54,7 +54,6 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="index.jsp">About</a></li>
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" 
 					href="topics.jsp" id="topics">Topics <span class="caret"></span></a>
 						<ul class="dropdown-menu">
