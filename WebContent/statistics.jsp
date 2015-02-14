@@ -1,14 +1,10 @@
 <jsp:include page="template-top.jsp"/>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />	<br />
   <link rel="stylesheet" href="css/keen-dashboards.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
 
   <div class="container-fluid">
     <div class="row">

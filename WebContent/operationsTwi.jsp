@@ -1,6 +1,10 @@
 <jsp:include page="template-top.jsp" />
-<p></p>
-<p></p>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
 <small> <p align="right"> <font color="blue"> <a href="./logout">Welcome ${twitter.screenName } (${twitter.id })</a></font></p></small>
 
 <div class="row clearfix">

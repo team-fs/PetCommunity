@@ -1,6 +1,10 @@
 <jsp:include page="template-top.jsp"/>
-<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 <div class="container">
 	<div class="row clearfix">
 		<c:forEach var="item" items="${photolist}"> 
