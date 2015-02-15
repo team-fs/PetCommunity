@@ -12,14 +12,15 @@ import javax.servlet.http.HttpSession;
 import model.Model;
 import databeans.UserBean;
 
-
 @SuppressWarnings("serial")
 public class Controller extends HttpServlet {
 
     public void init() throws ServletException {
         Model model = new Model(getServletConfig());
-
-        Action.add(new LoginAction(model));
+        
+        Action.add(new ListAction(model));
+        Action.add(new VoteAction(model));
+        Action.add(new NewPageAction(model));
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,7 +41,7 @@ public class Controller extends HttpServlet {
     private String performTheAction(HttpServletRequest request) {
         HttpSession session     = request.getSession(true);
         String      servletPath = request.getServletPath();
-        User        user = (User) session.getAttribute("user");
+        UserBean        user = (UserBean) session.getAttribute("user");
         String      action = getActionName(servletPath);
 
         // System.out.println("servletPath="+servletPath+" requestURI="+request.getRequestURI()+"  user="+user);
@@ -52,7 +53,7 @@ public class Controller extends HttpServlet {
         
         if (user == null) {
         	// If the user hasn't logged in, direct him to the login page
-			return Action.perform("login.do",request);
+        	return Action.perform("newpage.do",request);
         }
 
       	// Let the logged in user run his chosen action

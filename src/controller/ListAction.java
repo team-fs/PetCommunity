@@ -76,4 +76,9 @@ public class ListAction extends Action {
         	return "error.jsp";
         }
     }
+    
+//    public String perform(HttpServletRequest request) {
+//    	System.out.println("Hello!!!");
+//    	return "list.jsp";
+//    }
 }
