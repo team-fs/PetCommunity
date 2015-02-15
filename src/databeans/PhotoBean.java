@@ -12,7 +12,7 @@ public class PhotoBean implements Comparable<PhotoBean> {
 			".jpg", ".gif", ".JPG"
 	} ));
 
-	private int    	photoId		= -1;
+	private int    	photoId	;
 	private int 	userId		= -1;
 	private int 	tweetId		= -1;
 	private byte[] 	bytes       = null;
@@ -54,4 +54,5 @@ public class PhotoBean implements Comparable<PhotoBean> {
     public String toString() {
     	return "Photo("+photoId+")";
     }
+
 }

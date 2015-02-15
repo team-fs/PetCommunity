@@ -45,17 +45,14 @@ public class Controller extends HttpServlet {
         String      action = getActionName(servletPath);
 
         // System.out.println("servletPath="+servletPath+" requestURI="+request.getRequestURI()+"  user="+user);
-
         if (action.equals("register.do") || action.equals("login.do")) {
         	// Allow these actions without logging in
 			return Action.perform(action,request);
         }
-        
         if (user == null) {
         	// If the user hasn't logged in, direct him to the login page
         	return Action.perform("newpage.do",request);
         }
-
       	// Let the logged in user run his chosen action
 		return Action.perform(action,request);
     }

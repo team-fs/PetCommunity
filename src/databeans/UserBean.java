@@ -4,7 +4,7 @@ import org.genericdao.PrimaryKey;
 
 @PrimaryKey("userId")
 public class UserBean {
-	private int userId = -1;
+	private int userId;
 	private String  email = null;
 	private String  password = "*";
 	private String  firstName = null;

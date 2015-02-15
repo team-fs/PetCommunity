@@ -41,6 +41,7 @@ public class ListAction extends Action {
     public String getName() { return "list.do"; }
 
     public String perform(HttpServletRequest request) {
+    	System.out.println("Logining in");
         // Set up the request attributes (the errors list and the form bean so
         // we can just return to the jsp with the form if the request isn't correct)
 
@@ -51,11 +52,13 @@ public class ListAction extends Action {
             // Set up user list for nav bar
 			request.setAttribute("userList",userDAO.getUsers());
 
-			UserForm form = formBeanFactory.create(request);
+//			UserForm form = formBeanFactory.create(request);
 
-			int userId = form.getIdAsInt();
+//			int userId = form.getIdAsInt();
+			int userId = 1; //Fake user login !!!!!!!!!!!!!!!
 
 	        // Set up favorite list
+			
         	UserBean user = userDAO.read(userId);
         	if (user == null) {
     			errors.add("Invalid User: "+userId);
@@ -71,10 +74,7 @@ public class ListAction extends Action {
         } catch (RollbackException e) {
         	errors.add(e.getMessage());
         	return "error.jsp";
-        } catch (FormBeanException e) {
-        	errors.add(e.getMessage());
-        	return "error.jsp";
-        }
+        } 
     }
     
 //    public String perform(HttpServletRequest request) {

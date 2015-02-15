@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 import org.genericdao.ConnectionPool;
 import org.genericdao.DAOException;
@@ -19,7 +20,17 @@ public class UserDAO extends GenericDAO<UserBean> {
 
 	public UserBean[] getUsers() throws RollbackException {
 		UserBean[] users = match();
-		Arrays.sort(users);  // We want them sorted by last and first names (as per User.compareTo());
+		Arrays.sort(users, new Comparator<UserBean>(){
+
+			@Override
+			public int compare(UserBean o1, UserBean o2) {
+				// TODO Auto-generated method stub
+				if(o1.getFirstName().compareTo(o2.getLastName()) != 0)
+					return o1.getFirstName().compareTo(o2.getLastName());
+				return o1.getLastName().compareTo(o2.getLastName());
+			}
+			
+		});  // We want them sorted by last and first names (as per User.compareTo());
 		return users;
 	}
 	
