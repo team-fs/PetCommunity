@@ -32,45 +32,47 @@ public class Model {
 			if(userDAO.getUsers().length==0) {
 				UserBean user1 = new UserBean("aaa","aaa","aaa","aaa");
 				PhotoBean photo11 = new PhotoBean();
-		//		photo11.setUrl("https://www.petfinder.com/wp-content/uploads/2012/11/dog-how-to-select-your-new-best-friend-thinkstock99062463.jpg");
-				photo11.setUrl("src/cat1.jpg");
+				photo11.setUrl("https://c2.staticflickr.com/8/7186/6868556299_be0b15fe53.jpg");
+//				photo11.setUrl("src/cat1.jpg");
 				photo11.loadByteByURL();
 				photo11.setContentType("jpg");
 				photo11.setTweetId(1);
 				photo11.setUserId(1);
-				photo11.setCaption("Cat 1");
+				photo11.setCaption("Cat1");
 				userDAO.create(user1);
+				photoDAO.create(photo11);
 				PhotoBean photo12 = new PhotoBean();
-		//		photo12.setUrl("http://www.hdwallpapers11.com/wallpapers/2560x1600/cute-white-dog-2560x1600.jpg");
-				photo12.setUrl("src/dog1.jpg");
+//				photo12.setUrl("http://www.hdwallpapers11.com/wallpapers/2560x1600/cute-white-dog-2560x1600.jpg");
+				photo12.setUrl("https://c2.staticflickr.com/4/3883/14580278667_9b9985983a_z.jpg");
 				photo12.loadByteByURL();
 				photo12.setContentType("jpg");
-				photo12.setTweetId(1);
+				photo12.setTweetId(2);
 				photo12.setUserId(1);
 				photo12.setCaption("Dog1");
-				userDAO.create(user1);				
-				photoDAO.create(photo11);
+				userDAO.create(user1);
 				photoDAO.create(photo12);
-							
-				UserBean user2 = new UserBean("bbb","bbb","bbb","bbb");				
+				
+				
+				UserBean user2 = new UserBean("bbb","bbb","bbb","bbb");
+				userDAO.create(user2);
 				PhotoBean photo21 = new PhotoBean();
-		//		photo21.setUrl("https://www.petfinder.com/wp-content/uploads/2012/11/122163343-conditioning-dog-loud-noises-632x475.jpg");
-				photo21.setUrl("src/cat2.jpg");
+//				photo21.setUrl("https://www.petfinder.com/wp-content/uploads/2012/11/122163343-conditioning-dog-loud-noises-632x475.jpg");
+				photo21.setUrl("https://c1.staticflickr.com/5/4107/4834452857_c6e347ab86_b.jpg");
 				photo21.loadByteByURL();
 				photo21.setContentType("jpg");
-				photo21.setTweetId(2);
-				photo21.setUserId(1);
+				photo21.setTweetId(1);
+				photo21.setUserId(2);
 				photo21.setCaption("Cat2");
+				photoDAO.create(photo21);
 				PhotoBean photo22 = new PhotoBean();
-				photo22.setUrl("src/dog2.jpg");
+//				photo12.setUrl("http://www.hdwallpapers11.com/wallpapers/2560x1600/cute-white-dog-2560x1600.jpg");
+				photo22.setUrl("https://c2.staticflickr.com/8/7041/7118402399_5d8f78bf9c_b.jpg");
 				photo22.loadByteByURL();
 				photo22.setContentType("jpg");
 				photo22.setTweetId(2);
-				photo22.setUserId(1);
-				photo22.setCaption("Dog2");				
-				userDAO.create(user2);
-				photoDAO.create(photo21);
-				photoDAO.create(photo22);
+				photo22.setUserId(2);
+				photo22.setCaption("Dog2");
+				photoDAO.create(photo22);				
 			}
 		} catch (DAOException e) {
 			throw new ServletException(e);

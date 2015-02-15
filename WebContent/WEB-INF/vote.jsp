@@ -52,9 +52,9 @@
 
 					<!--Twitter Share Button  -->
 					<a href="https://twitter.com/share" class="twitter-share-button"
-						data-lang="en" data-via="TeamAllience"
+						data-lang="en" data-via="Team10 FS"
 						data-url="${photo.url}"
-						data-hashtags="task8" data-text="I vote for ${photo.caption} because ${tweetbox}" data-size="large">Share on Twitter</a>
+						data-hashtags="Task8 Pets of the Week Campaign" data-text="I vote for ${photo.caption} because ${tweetbox}" data-size="large">Share on Twitter</a>
 					<script>
 						!function(d, s, id) {
 							var js, fjs = d.getElementsByTagName(s)[0];
@@ -68,9 +68,10 @@
 					</script>
 				</p>
 
+				<div></div>
+
 			</div>
 		</div>
 	</div>
-</div>
 
 	<jsp:include page="template-bottom.jsp" />
