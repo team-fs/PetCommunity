@@ -1,48 +1,76 @@
-<jsp:include page="template-top.jsp"/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	<br />
+<jsp:include page="template-top.jsp" />
 
-<p style="font-size:medium">
-    Photos for ${firstName} ${lastName}
-</p>
+<style>
+.grid {
+	width: 90%;
+	padding: 15px;
+	background: #fff;
+	margin: 8px;
+	font-size: 12px;
+	box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+	-moz-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+	-webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+	-webkit-transition: top 1s ease, left 1s ease;
+	-moz-transition: top 1s ease, left 1s ease;
+	-o-transition: top 1s ease, left 1s ease;
+	-ms-transition: top 1s ease, left 1s ease;
+}
+</style>
+
 <div class="container">
-	<div class="row clearfix">
-		<c:forEach var="item" items="${photoList}"> 
-			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="http://placehold.it/400x300">
-                    <img class="img-responsive" src="img/background.jpg" alt="">
-                </a>
-                <p>	${item.vote} </p>
-                <button type="button" class="btn btn-primary btn-sm btn-block">Vote</button>
-            </div>
-		</c:forEach>
+
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="hero-unit">
+				<h2 class="text-center">Your vote has been submitted</h2>
+
+				<hr>
+				<div class="row-fluid">
+					<div class="span6">
+						<ul class="thumbnails">
+							<li class="thumbnails"><a href="${photo.url}">
+								<img src="${photo.url}"  height="300" width="300"></a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="span6">
+						<ul class="thumbnails">
+							<div class="grid">
+								<p class="text-left">Its current vote is ${photo.vote}</p>
+							</div>
+						
+						</ul>
+					</div>
+				</div>
+				<hr>
+				<p align="center">
+					<a class="btn btn-default" href="list.do">&laquo; Back</a>
+				</p>
+				<p>
+
+					<!--Twitter Share Button  -->
+					<a href="https://twitter.com/share" class="twitter-share-button"
+						data-lang="en" data-via="TeamAllience"
+						data-url="${photo.url}"
+						data-hashtags="task8" data-text="I vote for ${photo.caption} because ${tweetbox}" data-size="large">Share on Twitter</a>
+					<script>
+						!function(d, s, id) {
+							var js, fjs = d.getElementsByTagName(s)[0];
+							if (!d.getElementById(id)) {
+								js = d.createElement(s);
+								js.id = id;
+								js.src = "https://platform.twitter.com/widgets.js";
+								fjs.parentNode.insertBefore(js, fjs);
+							}
+						}(document, "script", "twitter-wjs");
+					</script>
+				</p>
+
+			</div>
+		</div>
 	</div>
 </div>
 
-<div id="myElement"></div>
-<script type="text/javascript" src="js/javascript-flickr-badge.min.js"></script>
-<script type="text/javascript">
-  jsFlickrBadge(document.getElementById('myElement'), {
-      // your Flickr ID (find it here)
-      flickrId: '16202569@N00',
-      // feed type. user, group, contacts, etc.
-      feed: 'user',
-      // optional comma-delimited tags to filter by, only used with 'user' feed
-      tags: 'badge,awesome',
-      // number of rows to display
-      rows: 4,
-      // number of columns to display
-      columns: 4,
-      // size of each thumbnail (any bigger than 75 will cause pixelization)
-      size: 75,
-      // animation to use.
-      // one of: vscroll, random, vscroll, shuffle, zoom, scroll, flipX, flipY
-      animation: 'vscroll',
-      // seconds each animation takes
-      animationSpeed: 1,
-      // seconds between each animation
-      animationPause: 2
-    });
-</script>
-
-<jsp:include page="template-bottom.jsp"/>
+	<jsp:include page="template-bottom.jsp" />
