@@ -52,9 +52,9 @@
 					Share your voting on Twitter!
 					<!--Twitter Share Button  -->
 					<a href="https://twitter.com/share" class="twitter-share-button"
-						data-lang="en" data-via="Team10 FS"
+						data-lang="en" data-via="Team10_FS"
 						data-url="${photo.url}"
-						data-hashtags="Task8 Pets of the Week Campaign" data-text="I vote for ${photo.caption} because ${tweetbox}" data-size="large">Share on Twitter</a>
+						data-hashtags="Task8PetsoftheWeekCampaign" data-text="I vote for ${photo.caption} because ${tweetbox}" data-size="large">Share on Twitter</a>
 					<script>
 						!function(d, s, id) {
 							var js, fjs = d.getElementsByTagName(s)[0];
