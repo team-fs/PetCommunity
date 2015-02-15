@@ -20,7 +20,7 @@ public class Controller extends HttpServlet {
         
         Action.add(new ListAction(model));
         Action.add(new VoteAction(model));
-        Action.add(new NewPageAction(model));
+//        Action.add(new NewPageAction(model));
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,7 +41,7 @@ public class Controller extends HttpServlet {
     private String performTheAction(HttpServletRequest request) {
         HttpSession session     = request.getSession(true);
         String      servletPath = request.getServletPath();
-        UserBean        user = (UserBean) session.getAttribute("user");
+        UserBean    user = (UserBean) session.getAttribute("user");
         String      action = getActionName(servletPath);
 
         // System.out.println("servletPath="+servletPath+" requestURI="+request.getRequestURI()+"  user="+user);
