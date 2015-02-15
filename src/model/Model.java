@@ -32,7 +32,7 @@ public class Model {
 			if(userDAO.getUsers().length==0) {
 				UserBean user1 = new UserBean("aaa","aaa","aaa","aaa");
 				PhotoBean photo1 = new PhotoBean();
-				File fi = new File("/Users/SuperXiao/git/PetCommunity/src/dog1.jpg");
+				File fi = new File("/Users/Backy/git/PetCommunity/src/dog1.jpg");
 				byte[] fileContent = Files.readAllBytes(fi.toPath());
 				photo1.setBytes(fileContent);
 				photo1.setContentType("jpg");
@@ -49,10 +49,10 @@ public class Model {
 				fi = new File("/Users/SuperXiao/git/PetCommunity/src/dog2.jpg");
 				fileContent = Files.readAllBytes(fi.toPath());
 				photo2.setBytes(fileContent);
-				photo1.setContentType("jpg");
-				photo1.setTweetId(2);
+				photo2.setContentType("jpg");
+				photo2.setTweetId(2);
 				photo2.setUserId(1);
-				photo2.setCaption("Dog1");
+				photo2.setCaption("Dog2");
 				photoDAO.create(photo2);
 			}
 		} catch (DAOException e) {

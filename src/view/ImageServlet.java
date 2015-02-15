@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import databeans.Photo;
+import databeans.PhotoBean;
 
 
 /**
@@ -21,7 +21,7 @@ import databeans.Photo;
 @SuppressWarnings("serial")
 public class ImageServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-    	Photo photo = (Photo) request.getAttribute("photo");
+    	PhotoBean photo = (PhotoBean) request.getAttribute("photo");
 
         if (photo == null) {
         	response.sendError(HttpServletResponse.SC_NOT_FOUND);
