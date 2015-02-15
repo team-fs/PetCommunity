@@ -41,7 +41,7 @@ public class ListAction extends Action {
     public String getName() { return "list.do"; }
 
     public String perform(HttpServletRequest request) {
-    	System.out.println("Logining in");
+//    	System.out.println("Logining in");
         // Set up the request attributes (the errors list and the form bean so
         // we can just return to the jsp with the form if the request isn't correct)
 
@@ -68,7 +68,7 @@ public class ListAction extends Action {
     			request.setAttribute("lastName", user.getLastName());    			
     		}
 
-        	PhotoBean[] photoList = photoDAO.getPhotos(userId);
+        	PhotoBean[] photoList = photoDAO.getAllPhotos();
 	        request.setAttribute("photoList",photoList);
 	        return "list.jsp";
         } catch (RollbackException e) {

@@ -1,5 +1,11 @@
 package databeans;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -19,6 +25,7 @@ public class PhotoBean implements Comparable<PhotoBean> {
 	private String 	caption     = null;
 	private String 	contentType = null;
 	private int    	vote    	= 0;
+	private String url = null;
 	
 	public int compareTo(PhotoBean other) {
 		// Ordered by vote
@@ -54,5 +61,38 @@ public class PhotoBean implements Comparable<PhotoBean> {
     public String toString() {
     	return "Photo("+photoId+")";
     }
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	
+	public void loadByteByURL() {
+		try {
+			URL source;
+			source = new URL(this.url);
+			InputStream in = new BufferedInputStream(source.openStream());
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			byte[] buf = new byte[1024];
+			int n = 0;
+			while (-1!=(n=in.read(buf)))
+			{
+			   out.write(buf, 0, n);
+			}
+			out.close();
+			in.close();
+			bytes = out.toByteArray();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 
 }

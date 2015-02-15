@@ -51,34 +51,17 @@ public class VoteAction extends Action {
         request.setAttribute("errors",errors);
         
 		try {
-            // Set up user list for nav bar
-			request.setAttribute("userList",userDAO.getUsers());
-
-			PhotoForm form = formBeanFactory.create(request);
-	    	
-	        // Any validation errors?
-	        errors.addAll(form.getValidationErrors());
-	        if (errors.size() != 0) {
-	            return "error.jsp";
-	        }
-        
-    		int id = form.getIdAsInt();
-    		PhotoBean p = photoDAO.read(id);
-    		if (p == null) {
-    			errors.add("No url with id="+id);
-    			return "error.jsp";
-    		}
-    		photoDAO.vote(id);
-    		request.setAttribute("favorite",p);
-    		request.setAttribute("title",p.getCaption());
-    		
+			String tweetbox = request.getParameterValues("tweetbox")[0];
+			int flickrbox = Integer.valueOf(request.getParameterValues("flickrbox")[0]);
+			PhotoBean photo = photoDAO.getPhotoById(flickrbox);
+			photo.setVote(photo.getVote()+1);
+			photoDAO.update(photo);
+			request.setAttribute("photo", photo);
+			request.setAttribute("tweetbox", tweetbox);
             return "vote.jsp";
     	} catch (RollbackException e) {
     		errors.add(e.getMessage());
     		return "error.jsp";
-    	} catch (FormBeanException e) {
-    		errors.add(e.getMessage());
-    		return "error.jsp";
-    	}
+    	} 
     }
 }

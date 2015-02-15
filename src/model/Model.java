@@ -31,39 +31,43 @@ public class Model {
 			
 			if(userDAO.getUsers().length==0) {
 				UserBean user1 = new UserBean("aaa","aaa","aaa","aaa");
-				PhotoBean photo1 = new PhotoBean();
-				File fi = new File("/Users/Backy/git/PetCommunity/src/dog1.jpg");
-				byte[] fileContent = Files.readAllBytes(fi.toPath());
-				photo1.setBytes(fileContent);
-				photo1.setContentType("jpg");
-				photo1.setTweetId(1);
-				photo1.setUserId(1);
-				photo1.setCaption("Dog1");
+				PhotoBean photo11 = new PhotoBean();
+				photo11.setUrl("https://www.petfinder.com/wp-content/uploads/2012/11/dog-how-to-select-your-new-best-friend-thinkstock99062463.jpg");
+				photo11.loadByteByURL();
+				photo11.setContentType("jpg");
+				photo11.setTweetId(1);
+				photo11.setUserId(1);
+				photo11.setCaption("Dog1");
 				userDAO.create(user1);
-				photoDAO.create(photo1);
+				photoDAO.create(photo11);
+				PhotoBean photo12 = new PhotoBean();
+				photo12.setUrl("http://www.hdwallpapers11.com/wallpapers/2560x1600/cute-white-dog-2560x1600.jpg");
+				photo12.loadByteByURL();
+				photo12.setContentType("jpg");
+				photo12.setTweetId(1);
+				photo12.setUserId(1);
+				photo12.setCaption("Dog1");
+				userDAO.create(user1);
+				photoDAO.create(photo12);
 				
 				
 				UserBean user2 = new UserBean("bbb","bbb","bbb","bbb");
 				userDAO.create(user2);
-				PhotoBean photo2 = new PhotoBean();
-				fi = new File("/Users/SuperXiao/git/PetCommunity/src/dog2.jpg");
-				fileContent = Files.readAllBytes(fi.toPath());
-				photo2.setBytes(fileContent);
-				photo2.setContentType("jpg");
-				photo2.setTweetId(2);
-				photo2.setUserId(1);
-				photo2.setCaption("Dog2");
-				photoDAO.create(photo2);
+				PhotoBean photo21 = new PhotoBean();
+				photo21.setUrl("https://www.petfinder.com/wp-content/uploads/2012/11/122163343-conditioning-dog-loud-noises-632x475.jpg");
+				photo21.loadByteByURL();
+				photo21.setContentType("jpg");
+				photo21.setTweetId(2);
+				photo21.setUserId(1);
+				photo21.setCaption("Dog2");
+				photoDAO.create(photo21);
 			}
 		} catch (DAOException e) {
 			throw new ServletException(e);
 		} catch (RollbackException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
+		}
 	}
 	
 	public PhotoDAO getPhotoDAO() { return photoDAO; }

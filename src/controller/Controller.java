@@ -20,7 +20,7 @@ public class Controller extends HttpServlet {
         
         Action.add(new ListAction(model));
         Action.add(new VoteAction(model));
-//        Action.add(new NewPageAction(model));
+        Action.add(new NewPageAction(model));
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,7 +41,7 @@ public class Controller extends HttpServlet {
     private String performTheAction(HttpServletRequest request) {
         HttpSession session     = request.getSession(true);
         String      servletPath = request.getServletPath();
-        UserBean    user = (UserBean) session.getAttribute("user");
+        UserBean        user = (UserBean) session.getAttribute("user");
         String      action = getActionName(servletPath);
 
         // System.out.println("servletPath="+servletPath+" requestURI="+request.getRequestURI()+"  user="+user);
@@ -73,6 +73,11 @@ public class Controller extends HttpServlet {
 			response.sendRedirect(nextPage);
 			return;
     	}
+    	
+    	if (nextPage.contains("vote.do?userid=")) {
+			response.sendRedirect(nextPage);
+			return;
+		}
     	
     	if (nextPage.endsWith(".jsp")) {
 	   		RequestDispatcher d = request.getRequestDispatcher("WEB-INF/" + nextPage);
