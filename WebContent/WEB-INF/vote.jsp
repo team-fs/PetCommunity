@@ -30,7 +30,7 @@
 					<div class="span6">
 						<ul class="thumbnails">
 							<li class="thumbnails"><a href="${photo.url}">
-								<img src="${photo.url}"  height="300" width="300"></a>
+								<img src="${photo.url}"  height="320" width="240"></a>
 							</li>
 						</ul>
 					</div>
@@ -49,7 +49,7 @@
 					<a class="btn btn-default" href="list.do">&laquo; Back</a>
 				</p>
 				<p>
-
+					Share your voting on Twitter!
 					<!--Twitter Share Button  -->
 					<a href="https://twitter.com/share" class="twitter-share-button"
 						data-lang="en" data-via="Team10 FS"
