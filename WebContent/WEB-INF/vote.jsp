@@ -38,7 +38,7 @@
 					<div class="span6">
 						<ul class="thumbnails">
 							<div class="grid">
-								<p class="text-left">Its current vote is ${photo.vote}</p>
+								<p class="text-left">Your current vote is ${photo.vote}</p>
 							</div>
 						
 						</ul>
