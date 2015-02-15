@@ -1,10 +1,7 @@
 <jsp:include page="template-top.jsp"/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 	<br />
-	<br />
-	<br />
-	<br />
-	<br />
+
 <p style="font-size:medium">
     Photos for ${firstName} ${lastName}
 </p>
@@ -23,7 +20,7 @@
 </div>
 
 <div id="myElement"></div>
-<script type="text/javascript" src="javascript-flickr-badge.min.js"></script>
+<script type="text/javascript" src="js/javascript-flickr-badge.min.js"></script>
 <script type="text/javascript">
   jsFlickrBadge(document.getElementById('myElement'), {
       // your Flickr ID (find it here)

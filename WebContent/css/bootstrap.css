@@ -6376,6 +6376,11 @@ button.close {
 .visible-lg-inline-block {
   display: none !important;
 }
+
+#myElement a {
+  margin: 5px;
+}
+
 @media (max-width: 767px) {
   .visible-xs {
     display: block !important;
