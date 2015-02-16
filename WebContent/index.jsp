@@ -11,14 +11,9 @@
                         <hr class="intro-divider">
                         
                         <ul class="list-inline intro-social-buttons">
+                        	Sign in With                        		
                             <li>
                                 <a href="signin" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-yelp fa-fw"></i> <span class="network-name">Yelp</span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
                             </li>
                         </ul>
                     </div>

@@ -9,22 +9,26 @@
 			<div class="row">
 				<h2 class="text-center">Vote for the Pets of the Week!</h2>
 				<div class="span6">
-					<div class="col-lg-12">
+					<div class="hero-unit" align="center">
 						<section id="wrapper">
-							<div id="container">						
+							<h4>Choose Pictures</h4>
+							<div id="container">
+							
 								<c:if test="${empty photoList}">
 									<p>No result found. Please try another key word.</p>
 								</c:if>
 								<c:if test="${!empty photoList}">
 									<c:forEach items="${photoList}" var="flickr">
-										<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-											<a href="${flickr.url}"> <img src="${flickr.url}" height="180" width="320"></a>
+										<div class="grid">
+											<div class="imgholder">
+												<a href="${flickr.url}"> <img src="${flickr.url}" height="180" width="320"></a>
+											</div>
+											<p>
+												<input type="radio" name="flickrbox"
+													value="${flickr.photoId}">
+												<input type="button" value="Vote ${flickr.vote}" disabled>
+											</p>
 										</div>
-										<p>
-											<input type="radio" name="flickrbox"
-												value="${flickr.photoId}">
-											<input type="label" value="Vote ${flickr.vote}" disabled>
-										</p>
 									</c:forEach>
 								</c:if>
 							</div>

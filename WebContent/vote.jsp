@@ -23,31 +23,21 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<div class="hero-unit">
-				<h2 class="text-center">Your vote has been submitted</h2>
+				<h2 class="text-center">Thanks for participating in "Pets of the Week Campaign"!</h2>
 
 				<hr>
 				<div class="row-fluid">
 					<div class="span6">
 						<ul class="thumbnails">
+						<p>The photo you've voted is </p>
 							<li class="thumbnails"><a href="${photo.url}">
-								<img src="${photo.url}"  height="320" width="240"></a>
+								<img src="${photo.url}"  height="240" width="320"></a>
 							</li>
-						</ul>
-					</div>
-
-					<div class="span6">
-						<ul class="thumbnails">
-							<div class="grid">
-								<p class="text-left">Your current vote is ${photo.vote}</p>
-							</div>
-						
+							<li> ${tweetbox} </li>
 						</ul>
 					</div>
 				</div>
 				<hr>
-				<p align="center">
-					<a class="btn btn-default" href="list.do">&laquo; Back</a>
-				</p>
 				<p>
 					Share your voting on Twitter!
 					<!--Twitter Share Button  -->
@@ -67,8 +57,9 @@
 						}(document, "script", "twitter-wjs");
 					</script>
 				</p>
-
-				<div></div>
+				<p align="center">
+					<a class="btn btn-default" href="list.do">&laquo; Back</a>
+				</p>
 
 			</div>
 		</div>

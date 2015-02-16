@@ -32,7 +32,7 @@ public class Model {
 			if(userDAO.getUsers().length==0) {
 				UserBean user1 = new UserBean("aaa","aaa","aaa","aaa");
 				PhotoBean photo11 = new PhotoBean();
-				photo11.setUrl("https://c2.staticflickr.com/8/7186/6868556299_be0b15fe53.jpg");
+				photo11.setUrl("https://c1.staticflickr.com/5/4148/4959747015_e81b01b318_b.jpg");
 //				photo11.setUrl("src/cat1.jpg");
 				photo11.loadByteByURL();
 				photo11.setContentType("jpg");
