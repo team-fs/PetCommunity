@@ -3,7 +3,6 @@
 <%@ page import="databeans.PhotoBean" %>
 <link href="css/thumbnail-gallery.css" rel="stylesheet">
 
-<p>
 	<div class="container">
 		<form method="POST" action="vote.do">
 			<div class="row">
@@ -19,12 +18,11 @@
 									<c:forEach items="${photoList}" var="flickr">
 										<div class="col-lg-3 col-md-4 col-xs-6 thumb">
 											<a href="${flickr.url}"> <img src="${flickr.url}" height="180" width="320"></a>
-										</div>
 										<p>
-											<input type="radio" name="flickrbox"
-												value="${flickr.photoId}">
-											<input type="label" value="Vote ${flickr.vote}" disabled>
+											<input type="radio" name="flickrbox" value="${flickr.photoId}">
+											<a href="#" class="btn btn-info btn-lg btn-block disabled" type="button">Vote ${flickr.vote}</a>
 										</p>
+										</div>
 									</c:forEach>
 								</c:if>
 							</div>
@@ -59,6 +57,5 @@
 		<br>
 
 	</div>
-</p>
 
 <jsp:include page="template-bottom.jsp" />
